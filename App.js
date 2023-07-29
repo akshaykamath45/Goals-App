@@ -9,9 +9,13 @@ export default function App() {
     console.log(enteredGoalText);
     setGoals((currentGoals) => [
       ...currentGoals,
-      { text: enteredGoalText, key: Math.random().toString() },
+      { text: enteredGoalText, id: Math.random().toString() },
     ]);
   };
+
+  const deleteGoalHandler=()=>{
+    console.log("DELETE");
+  }
   return (
     <View style={styles.appContainer}>
       <GoalInput onAddGoal={addGoalHandler} />
@@ -21,7 +25,7 @@ export default function App() {
           alwaysBounceVertical={false}
           data={goals}
           renderItem={(itemData) => {
-            return <GoalItem itemData={itemData} />;
+            return <GoalItem itemData={itemData} deleteGoalHandler={deleteGoalHandler}/>;
           }}
           keyExtractor={(item, index) => {
             return item.id;
