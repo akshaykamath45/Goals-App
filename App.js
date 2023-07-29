@@ -5,7 +5,7 @@ import { GoalInput } from "./components/GoalInput";
 export default function App() {
   const [goals, setGoals] = useState([]);
 
-  const addGoalHandler = ( enteredGoalText ) => {
+  const addGoalHandler = (enteredGoalText) => {
     console.log(enteredGoalText);
     setGoals((currentGoals) => [
       ...currentGoals,
@@ -13,9 +13,12 @@ export default function App() {
     ]);
   };
 
-  const deleteGoalHandler=()=>{
+  const deleteGoalHandler = (id) => {
     console.log("DELETE");
-  }
+    setGoals((currentGoals) => {
+      return currentGoals.filter((goal) => goal.id !== id);
+    });
+  };
   return (
     <View style={styles.appContainer}>
       <GoalInput onAddGoal={addGoalHandler} />
@@ -25,7 +28,12 @@ export default function App() {
           alwaysBounceVertical={false}
           data={goals}
           renderItem={(itemData) => {
-            return <GoalItem itemData={itemData} deleteGoalHandler={deleteGoalHandler}/>;
+            return (
+              <GoalItem
+                itemData={itemData}
+                deleteGoalHandler={deleteGoalHandler}
+              />
+            );
           }}
           keyExtractor={(item, index) => {
             return item.id;
