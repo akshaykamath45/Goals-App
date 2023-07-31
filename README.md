@@ -10,7 +10,7 @@ The Goals App is a mobile application built with React Native using Expo Go CLI.
 
 ## Screenshots
 
-![image](https://github.com/akshaykamath45/Goals-App/assets/73344382/ea7edac7-ed97-448b-8133-05f87ecef4e4)
+![image](https://github.com/akshaykamath45/Goals-App/assets/73344382/9c959c7a-4ee4-4e76-9f25-11a441416e5e)
 
 ![image](https://github.com/akshaykamath45/Goals-App/assets/73344382/3fbedc68-9385-4b75-947e-4def522949db)
 
