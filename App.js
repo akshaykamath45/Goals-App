@@ -46,7 +46,6 @@ export default function App() {
           />
         )}
         <View style={styles.goalsContainer}>
-          <Text>List of your goals...</Text>
           <FlatList
             alwaysBounceVertical={false}
             data={goals}
