@@ -10,6 +10,7 @@ export const GoalInput = ({ onAddGoal, isModalVisible }) => {
     onAddGoal(enteredGoalText);
     setEnteredGoalText("");
   };
+
   return (
     <Modal visible={isModalVisible} animationType="slider">
       <View style={styles.inputContainer}>
@@ -19,7 +20,14 @@ export const GoalInput = ({ onAddGoal, isModalVisible }) => {
           onChangeText={goalInputHandler}
           value={enteredGoalText}
         />
-        <Button title="Add Goal" onPress={addGoalHandler} />
+        <View style={styles.buttonContainer}>
+          <View style={styles.button}>
+            <Button title="Add Goal" onPress={addGoalHandler} />
+          </View>
+          <View style={styles.button}>
+            <Button title="Cancel" />
+          </View>
+        </View>
       </View>
     </Modal>
   );
@@ -28,17 +36,26 @@ export const GoalInput = ({ onAddGoal, isModalVisible }) => {
 const styles = StyleSheet.create({
   inputContainer: {
     flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: "column",
+    justifyContent: "center",
     alignItems: "center",
     borderBottomWidth: 1,
     marginBottom: 24,
+    padding: 16,
   },
   textInput: {
     borderWidth: 1,
     borderColor: "black",
-    width: "70%",
+    width: "100%",
     padding: 8,
     marginRight: 8,
+  },
+  buttonContainer: {
+    marginTop: 16,
+    flexDirection: "row",
+  },
+  button: {
+    width: 100,
+    marginHorizontal: 8,
   },
 });
